@@ -12,7 +12,7 @@ public class LineReader {
 
         int totalLines = 0;
         String line = "";
-        try (BufferedReader br = new BufferedReader(new FileReader("foo.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("Test2.txt"))) {
     
   
             while ((line = br.readLine()) != null) {
