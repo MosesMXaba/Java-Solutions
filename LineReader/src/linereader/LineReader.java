@@ -13,9 +13,10 @@ public class LineReader {
         int totalLines = 0;
         String line = "";
         try (BufferedReader br = new BufferedReader(new FileReader("Test2.txt"))) {
-    
-  
+            
+            //Loop through each line in the file.
             while ((line = br.readLine()) != null) {
+                //Trim out anything that is not required for each line in the file
                 String trimmedLine = line.trim();
 
                 if (!trimmedLine.startsWith("//") && !trimmedLine.startsWith("/*") && IsNullOrEmpty(trimmedLine) && !trimmedLine.startsWith("*")) {
@@ -23,7 +24,7 @@ public class LineReader {
                     totalLines++;
                 }
             }
-
+            //show the total lines
             System.out.println("This file has contains " + totalLines + " lines of code");
 
 
