@@ -13,7 +13,7 @@ public class LineReader {
         int totalLines = 0;
         String line = "";
         String catchMultiComments = "";
-        try (BufferedReader br = new BufferedReader(new FileReader("Test4.txt"))) {    
+        try (BufferedReader br = new BufferedReader(new FileReader("Test5.txt"))) {    
   
             while ((line = br.readLine()) != null) {
                 String trimmedLine = line.trim();
@@ -26,8 +26,18 @@ public class LineReader {
                     {
                         catchMultiComments +=trimmedLine;
                     }
-                    else{
-                        catchMultiComments = "";
+                    else
+                    {
+                        //Make sure that the comment closes correctly
+                        String validCommentClosure = catchMultiComments.substring(catchMultiComments.lastIndexOf("*/") + 1);
+                        if (validCommentClosure.contains("/*") && !validCommentClosure.contains("*/"))
+                        {
+                            catchMultiComments += trimmedLine;
+                        }
+                        else
+                        {
+                            catchMultiComments = "";
+                        }
                     }
                 }
                 
