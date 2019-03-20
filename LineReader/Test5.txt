@@ -21,7 +21,8 @@ public class LineReader {
                 if (!trimmedLine.startsWith("//") && !trimmedLine.startsWith("/*") && IsNullOrEmpty(trimmedLine) && !trimmedLine.startsWith("*")) {
                     //count the lines that meet the requirements
                     totalLines++;
-                }
+                /**/} /**/// Hello world;
+
             }
             //show the total lines
             System.out.println("This file has contains " + totalLines + " lines of code");
@@ -32,13 +33,14 @@ public class LineReader {
                test
                {
                ;
-			   )))
-			   nhdsdcksjf
             */
    
         } catch (Exception ex) {
             ex.printStackTrace();
-			string msg = ex.message;
+			/**
+			ystem.out.println("readLine() failed.");
+			**/
+			//Test /**/
             System.out.println("readLine() failed.");
         }
 
